@@ -8,6 +8,5 @@ func RegisterRoutes(r *gin.Engine, deps Dependencies) {
 	r.PUT("/platillos/:id", deps.UpdatePlatilloController.Update)
 	r.DELETE("/platillos/:id", deps.DeletePlatilloController.Delete)
 
-	// Nueva ruta para notificar pedido completado
 	r.POST("/pedidos/completado", deps.NotificarPedidoController.Notify)
 }
