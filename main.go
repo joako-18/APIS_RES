@@ -24,8 +24,6 @@ func main() {
 	deps := infrastructure.InitDependencies()
 	infrastructure.RegisterRoutes(r, deps)
 
-	go infrastructure.ConsumeOrders(deps.OrdenController.RabbitMQ)
-
 	fmt.Println("Servidor corriendo en el puerto 8080")
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal("Error iniciando el servidor:", err)
